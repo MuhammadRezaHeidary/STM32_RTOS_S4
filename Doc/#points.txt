@@ -114,7 +114,12 @@ ________________________________________
 	xSemaphoreGiveFromISR(CountingSem, &xHigherPriorityTaskWoken);
 ________________________________________
 ################## How to create queue?
-1. 
+1. xQueueHandle SimpleQueue;
+2. SimpleQueue = xQueueCreate(5, sizeof(int));
+3. other operations
+	xQueueSend( xQueue, pvItemToQueue, xTicksToWait )
+	xQueueSendToFrontFromISR( xQueue, pvItemToQueue, pxHigherPriorityTaskWoken )
+	xQueueReceive( QueueHandle_t xQueue, void * const pvBuffer, TickType_t xTicksToWait )
 ________________________________________
 ################## cmsis.h Important Functions
 
